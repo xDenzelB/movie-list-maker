@@ -5,7 +5,7 @@ export default function MovieList({ allMovies, deleteMovie }) {
   return <div className='movie-list'>
     {
       allMovies.map((movie, i) => <MovieItem deleteMovie={deleteMovie}
-        key={`${movie.title}-${i}`} movie={movie} />)
+        key={`${movie.title}-${i}`} {...movie} />)
     }
   </div>;
 }

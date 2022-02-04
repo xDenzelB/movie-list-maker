@@ -11,6 +11,7 @@ export default function MovieForm({
     e.preventDefault();
 
     const movie = {
+      id: Math.ceil(Math.random() * 10000),  
       title: movieTitle,
       director: movieDirector,
       year: movieYear,
@@ -41,7 +42,7 @@ export default function MovieForm({
     <label>
     Poster Color: 
       <select value={movieColor} onChange={e => setMovieColor(e.target.value)}>
-        <option value={'blue'}>Blue</option>
+        <option value={'purple'}>Purple</option>
         <option value={'green'}>Green</option>
         <option value={'yellow'}>Yellow</option>
         <option value={'red'}>Red</option>
