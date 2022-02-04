@@ -1,35 +1,19 @@
-import { useState } from 'react';
 import './App.css';
 import MovieItem from './MovieItem';
 import MovieList from './MovieList';
 import MovieForm from './MovieForm';
+import { useMovieForm } from './useMovieForm';
 function App() {
-  const [allMovies, setAllMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState(null);
-  const [movieYear, setMovieYear] = useState('');
-  const [movieDirector, setMovieDirector] = useState('');
-  const [movieTitle, setMovieTitle] = useState('');
-  const [movieColor, setMovieColor] = useState('');
-  
-  function addMovie(newMovie) {
-    const updateMovies = [...allMovies, newMovie];
+  const {
+    allMovies, filteredMovies, 
+    movieYear, setMovieYear,
+    movieDirector, setMovieDirector,
+    movieTitle, setMovieTitle,
+    movieColor, setMovieColor,
+    currentFilter, setCurrentFilter,
+    addMovie, deleteMovie, 
+  } = useMovieForm();
 
-    setAllMovies(updateMovies);
-  }
-
-  function deleteMovie(title) {
-    const index = allMovies.findIndex(movie => movie.title === title);
-
-    allMovies.splice(index, 1);
-
-    setAllMovies([...allMovies]);
-  }
-
-  function filterMovies(query) {
-    const filteredMovies = allMovies.filter(movie => movie.title.includes(query));
-
-    setFilteredMovies(filteredMovies);
-  }
   return (
     <div className="App">
       <div className='movie-section'>
@@ -53,7 +37,7 @@ function App() {
         }
       </div>
       <p>Find a Movie!</p>
-      <input onChange={(e) => filterMovies(e.target.value)} />
+      <input value={currentFilter} onChange={(e) => setCurrentFilter(e.target.value)} />
       <MovieList 
         allMovies={filteredMovies || allMovies }
         deleteMovie={deleteMovie} />
