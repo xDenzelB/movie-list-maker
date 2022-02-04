@@ -1,6 +1,10 @@
 .App {
   text-align: center;
+
 }
+
+
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +39,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+form label {
+  display: block;
+  margin: 55px;
+}
+
+form input {
+  margin: 10px;
+}
+
+.movie-item {
+  width: 200px;
+  margin: 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+  
+}
+
+.movie-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

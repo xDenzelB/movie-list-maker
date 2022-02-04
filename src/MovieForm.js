@@ -36,7 +36,7 @@ export default function MovieForm({
       <input required value={movieDirector} onChange={e => setMovieDirector(e.target.value)} />
     </label>
     <label>
-      
+      Year:
       <input required value={movieYear} onChange={e => setMovieYear(e.target.value)} />
     </label>
     <label>
