@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import MovieItem from './MovieItem';
+import MovieList from './MovieList';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
