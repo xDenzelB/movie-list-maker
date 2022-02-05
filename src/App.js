@@ -36,12 +36,12 @@ function App() {
             color={movieColor} />
         }
       </div>
-      <p>Find a Movie!</p>
-      <input value={currentFilter} onChange={(e) => setCurrentFilter(e.target.value)} />
-      <MovieList 
-        allMovies={filteredMovies || allMovies }
-        deleteMovie={deleteMovie} />
-    
+      <div className='filter-class'>Find a Movie!
+        <input className='filter' value={currentFilter} onChange={(e) => setCurrentFilter(e.target.value)} />
+        <MovieList 
+          allMovies={filteredMovies || allMovies }
+          deleteMovie={deleteMovie} />
+      </div>
     </div>
   );
 }

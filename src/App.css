@@ -45,9 +45,16 @@ form label {
   display: block;
   margin: 55px;
 }
+form {
+  position: absolute;
+  right: 300px;
+}
 
-form input {
-  margin: 10px;
+
+.filter-class  {
+  position: absolute;
+  top: 70px;
+  left: 300px;
 }
 
 .movie-item {
@@ -62,4 +69,11 @@ form input {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+button {
+  border-radius: 10px;
+  background-color: crimson;
+  width: 200px;
+  
 }
